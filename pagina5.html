@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imagens/gushi.svg" type="image/jpg" sizes="16x16">
+<title>Jogo de Adivinhação</title>
+</head>
+<body>
+ <div class="corpo">
+  <header class="s3">
+    <h1 style="color: lch(0% 0 0);">Jogo da adivinhação</h1>
+    <nav>
+    <ul>
+       
+      <li><a href="pagina4.html">exemplos do curso</a></li>
+    </ul>
+    </nav>
+  </header>
+<p>Tente adivinhar o número que o computador escolheu (entre 1 e 100)!</p>
+
+<input type="number" id="inputNumero">
+<button onclick="verificar()">Verificar</button>
+
+<p id="resultado"></p>
+
+<script>
+const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+
+function verificar() {
+    const numeroDigitado = parseInt(document.getElementById("inputNumero").value);
+    const resultado = document.getElementById("resultado");
+
+    if (numeroDigitado === numeroSecreto) {
+        resultado.textContent = "Parabéns! Você acertou!";
+    } else if (numeroDigitado < numeroSecreto) {
+        resultado.textContent = "Tente um número maior.";
+    } else {
+        resultado.textContent = "Tente um número menor.";
+    }
+}
+</script>
+
+</body>
+</html>
